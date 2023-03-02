@@ -21,6 +21,7 @@ public class Main {
                 System.out.print("작가: ");
                 person = sc.nextLine();
                 mList.add(new Myung(say, person));
+                System.out.println(mList.size() + "번 명언이 등록되었습니다.");
             }
            else {
                System.out.println("올바른 코드를 입력하세요");
