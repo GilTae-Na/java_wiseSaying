@@ -30,10 +30,11 @@ public class Main {
                             mList.get(i).getId()+ "/" + mList.get(i).getPerson() + "/" + mList.get(i).getSay());
                 }
             } else if (order.contains("삭제")) {
-                int inputSayNum  = Integer.parseInt(order.replaceAll("[^0-9]", ""))-1;
-                mList.remove(inputSayNum);
-                System.out.println((inputSayNum+1) + "번 명언이 삭제되었습니다.");
-
+                int inputSayNum  = Integer.parseInt(order.replaceAll("[^0-9]", ""));
+                if(mList.get(inputSayNum-1).getId() == inputSayNum){
+                    mList.remove(inputSayNum-1);
+                    System.out.println((inputSayNum) + "번 명언이 삭제되었습니다.");
+                }else System.out.println((inputSayNum)+ "번 명언은 존재하지 않습니다.");
             } else {
                System.out.println("올바른 코드를 입력하세요");
                sc.nextLine();
